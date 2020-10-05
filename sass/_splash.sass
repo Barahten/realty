@@ -1,0 +1,161 @@
+.rt-splash
+	background: #5f62ac
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	z-index: 1
+	display: none
+	&__wrapper
+		height: 100%
+		display: flex
+		flex-direction: column
+		justify-content: center
+		padding: 0 24px
+		color: #fff
+		@media(min-width: 768px)
+			flex-direction: row
+			justify-content: flex-start
+			width: 724px
+			margin: 0 auto
+			padding: 0 $gutter
+			align-items: center
+		@media(min-width: 1144px)
+			width: 1124px
+	&__icon
+		margin: 0 0 24px 0
+		@media(min-width: 768px)
+			margin: 0 62px 0 0
+			width: 240px
+			height: 240px
+			flex: 0 0 240px
+	&__text
+		@media(min-width: 1144px)
+			max-width: 422px
+		@media(min-width: 1144px)
+			max-width: 538px
+	&__title
+		font-weight: 300
+		font-size: 32px
+		line-height: 40px
+	&__subtitle
+		font-size: 16px
+		line-height: 24px
+		margin: 24px 0 0 0
+	&--stop-animation
+		.rt-checkmark__sign
+			opacity: 1
+.rt-checkmark
+	position: relative
+	width: 142px
+	height: 142px
+	@media(min-width: 768px)
+		width: 240px
+		height: 240px
+	&__circle
+		position: absolute
+		border-radius: 50%
+		width: 100%
+		height: 100%
+		margin: auto
+		left: 0
+		right: 0
+		transform: rotate(-45deg)
+		&--a-50
+			animation: rot-50 0.49s linear
+			animation-fill-mode: forwards
+		&--a-100
+			animation: rot-100 0.5s linear
+			animation-fill-mode: forwards
+			animation-delay: 0.5s
+		&--top
+			border-top: 4px solid #fff
+			border-left: 4px solid #fff
+			border-right: 4px solid transparent
+			border-bottom: 4px solid transparent
+		&--bottom
+			border-top: 4px solid transparent
+			border-left: 4px solid transparent
+			border-right: 4px solid #fff
+			border-bottom: 4px solid #fff
+			z-index: 0
+			opacity: 0
+	&__overlay
+		background-color: #5f62ac
+		position: absolute
+		z-index: 1
+		width: 50%
+		height: 100%
+		transform-origin: 120px
+		&--a-over
+			animation: hide 0s linear
+			animation-fill-mode: forwards
+			animation-delay: 0.5s
+	&__sign
+		opacity: 0
+		height: 96px
+		width: 35px
+		transform-origin: left top
+		border-right: 4px solid #f0c630
+		border-top: 4px solid #f0c630
+		content: ''
+		left: 45px
+		top: 60px
+		position: absolute
+		z-index: 10
+		animation: checkmark-mob 1s ease 1s
+		transform: scaleX(-1) rotate(135deg)
+		@media(min-width: 768px)
+			left: 55px
+			top: 110px
+			height: 220px
+			width: 90px
+			animation: checkmark-tab 1s ease 1s
+		
+		
+@keyframes rot-50
+	100%
+		transform: rotate(135deg)
+
+@keyframes hide
+	100%
+		background-color: transparent
+
+@keyframes rot-100
+	0%
+		opacity: 1
+		z-index: 2
+	100%
+		transform: rotate(135deg)
+		opacity: 1
+		z-index: 2
+@keyframes checkmark-mob
+	0%
+		height: 0
+		width: 0
+		opacity: 1
+	40%
+		height: 0
+		width: 35px
+		opacity: 1
+	100%
+		height: 96px
+		width: 35px
+		opacity: 1
+@keyframes checkmark-tab
+	0%
+		height: 0
+		width: 0
+		opacity: 1
+	40%
+		height: 0
+		width: 90px
+		opacity: 1
+	100%
+		height: 220px
+		width: 90px
+		opacity: 1
+
+	
+

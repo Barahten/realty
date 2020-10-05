@@ -1,0 +1,44 @@
+.rt-footer
+	padding: 32px 0
+	background: #f2f2f2
+
+.rt-footnav
+	&__title
+		line-height: 24px
+		margin: 0 0 16px 0
+		display: flex
+		align-items: center
+		justify-content: space-between
+	&__link
+		display: inline-block
+		opacity: .5
+		color: #000
+		line-height: 24px
+	&__item
+		display: block
+		margin: 0 0 8px 0
+		&:last-child
+			margin: 0 0 16px 0
+			@media(min-width: 768px)
+				margin: 0 0 24px 0
+			@media(min-width: 1144px)
+				margin: 0
+	&--collapsible
+		.rt-footnav__list
+			display: none
+			@media(min-width: 768px)
+				display: block !important
+		.rt-footnav__title
+			background-image: url(../images/sprite.svg#angle-down)
+			background-position: right center
+			background-repeat: no-repeat
+			background-size: 24px 7px
+			cursor: pointer
+			&--open
+				background-image: url(../images/sprite.svg#angle-up)
+			@media(min-width: 768px)
+				cursor: default
+				background: none
+.rt-footcopy
+	line-height: 24px		
+

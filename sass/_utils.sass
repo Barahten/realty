@@ -1,0 +1,71 @@
+@for $i from 0 through 20
+	.rt-mt-#{$i}
+		margin-top: unquote((4 * $i) + 'px')
+	.rt-mb-#{$i}
+		margin-bottom: unquote((4 * $i) + 'px')
+	.rt-ml-#{$i}
+		margin-left: unquote((4 * $i) + 'px')
+	.rt-mr-#{$i}
+		margin-right: unquote((4 * $i) + 'px')
+
+@for $i from 0 through 20
+	.rt-sm-pt-#{$i}
+		padding-top: unquote((4 * $i) + 'px')
+	.rt-sm-pb-#{$i}
+		padding-bottom: unquote((4 * $i) + 'px')
+	.rt-sm-pl-#{$i}
+		padding-left: unquote((4 * $i) + 'px')
+	.rt-sm-pr-#{$i}
+		padding-right: unquote((4 * $i) + 'px')
+	.rt-sm-pv-#{$i}
+		padding-top: unquote((4 * $i) + 'px')
+		padding-bottom: unquote((4 * $i) + 'px')
+	.rt-sm-ph-#{$i}
+		padding-left: unquote((4 * $i) + 'px')
+		padding-left: unquote((4 * $i) + 'px')
+
+@media(min-width: 768px)
+	@for $i from 0 through 20
+		.rt-md-pt-#{$i}
+			padding-top: unquote((4 * $i) + 'px')
+		.rt-md-pb-#{$i}
+			padding-bottom: unquote((4 * $i) + 'px')
+		.rt-md-pl-#{$i}
+			padding-left: unquote((4 * $i) + 'px')
+		.rt-md-pr-#{$i}
+			padding-right: unquote((4 * $i) + 'px')
+		.rt-md-pv-#{$i}
+			padding-top: unquote((4 * $i) + 'px')
+			padding-bottom: unquote((4 * $i) + 'px')
+		.rt-md-ph-#{$i}
+			padding-left: unquote((4 * $i) + 'px')
+			padding-left: unquote((4 * $i) + 'px')
+@media(min-width: 1144px)
+	@for $i from 0 through 20
+		.rt-lg-pt-#{$i}
+			padding-top: unquote((4 * $i) + 'px')
+		.rt-lg-pb-#{$i}
+			padding-bottom: unquote((4 * $i) + 'px')
+		.rt-lg-pl-#{$i}
+			padding-left: unquote((4 * $i) + 'px')
+		.rt-lg-pr-#{$i}
+			padding-right: unquote((4 * $i) + 'px')
+		.rt-lg-pv-#{$i}
+			padding-top: unquote((4 * $i) + 'px')
+			padding-bottom: unquote((4 * $i) + 'px')
+		.rt-lg-ph-#{$i}
+			padding-left: unquote((4 * $i) + 'px')
+			padding-right: unquote((4 * $i) + 'px')
+
+.rt-align-center
+	align-items: center
+@mixin scrollbar()
+	&::-webkit-scrollbar 
+		width:  4px
+		height: 5px
+	&::-webkit-scrollbar-thumb 
+		background: #e5e5e5
+		border-radius: 13px
+		background-clip: padding-box
+	&::-webkit-scrollbar-track 
+		background: transparent

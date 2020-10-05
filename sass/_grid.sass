@@ -1,0 +1,62 @@
+.rt-container
+	width: 100%
+	margin-right: auto
+	margin-left: auto
+	padding-right: 24px
+	padding-left: 24px
+	@media (min-width: 768px)
+			max-width: 724px
+			padding-right: $gutter
+			padding-left: $gutter
+
+	@media (min-width: 1144px) 
+			max-width: 1124px
+
+.rt-row 
+	display: flex
+	flex-wrap: wrap
+	margin-right: -24px
+	margin-left: -24px
+	@media(min-width: 768px)
+		margin-right: -$gutter
+		margin-left: -$gutter
+	position: relative
+
+
+%column
+	position: relative
+	width: 100%
+	padding-right: 24px
+	padding-left: 24px
+	@media(min-width: 768px)
+		padding-right: $gutter
+		padding-left: $gutter
+	
+@for $i from 0 through 4
+	.rt-col-#{$i}, .rt-col-md-#{$i}, .rt-col-lg-#{$i}
+		@extend %column
+	
+@for $i from 0 through 1
+	.rt-col-#{$i}
+		flex: 0 0 100%
+		max-width: 100%
+
+@media(min-width: 768px)
+	@for $i from 0 through 2
+		.rt-col-md-#{$i}
+			flex: 0 0 unquote(($i * 362) + 'px')
+			max-width: unquote(($i * 362) + 'px')
+		.rt-col-sm--offset-#{$i}
+			margin-left: unquote((362 * $i) + 'px')
+
+@media(min-width: 1144px)
+	@for $i from 0 through 4
+		.rt-col-lg-#{$i}
+			flex: 0 0 unquote(($i * 281) + 'px')
+			max-width: unquote(($i * 281) + 'px')
+		.rt-col-lg--offset-#{$i}
+			margin-left: unquote((281 * $i) + 'px')
+	
+
+
+

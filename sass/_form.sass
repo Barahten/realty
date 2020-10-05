@@ -1,0 +1,134 @@
+.rt-field
+	&__input
+		border: none
+		background: none
+		border-bottom: 1px solid #f0c630
+		padding: 16px 0
+		display: block
+		width: 100%
+		font-size: 16px
+		line-height: 16px
+		color: #fff
+		&::placeholder
+			color: #fff
+			opacity: .5
+	&--error
+		.rt-field__input
+			border-bottom: 1px solid #ee4713
+	
+.rt-select
+	position: relative
+	width: 100%
+	& > select
+		display: none
+	&__selected
+		color: #fff
+		padding: 16px 0
+		min-height: 16px
+		cursor: pointer
+		border-bottom: 1px solid #f0c630
+		user-select: none
+		&::after
+			position: absolute
+			content: ''
+			top: 22px
+			right: 0
+			width: 0
+			height: 0
+			border: 4px solid transparent
+			border-color: #fff transparent transparent transparent
+		&--open
+			&::after
+				border-color: transparent transparent #fff transparent
+				top: 16px
+	&__list
+		position: absolute
+		background: #fff
+		top: 100%
+		left: 0
+		right: 0
+		z-index: 99
+		box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.05)
+		padding: 8px 0
+		user-select: none
+		height: 112px
+		overflow: auto
+		@include scrollbar
+		&--hidden
+			display: none
+	&__item
+		color: #000
+		cursor: pointer
+		font-size: 14px
+		padding: 8px 16px
+		line-height: 16px
+		&:hover, &--current
+			background-color: rgba(0, 0, 0, 0.1)
+
+.rt-checkbox
+	cursor: pointer
+	user-select: none
+	position: relative
+	display: inline-block
+	color: inherit
+	height: 100%
+	&__input
+		position: absolute
+		opacity: 0
+		height: 0
+		width: 0
+		&:checked ~ .rt-checkbox__thumb::after 
+			content: ''
+			position: absolute
+			left: 7px
+			top: 3px
+			width: 5px
+			height: 10px
+			border-width: 0 2px 2px 0
+			border-style: solid
+			transform: rotate(45deg)
+	&__thumb
+		position: absolute
+		top: 50%
+		left: 0
+		transform: translateY(-50%)
+		transition: all .2s ease
+		cursor: pointer
+		width: 20px
+		height: 20px
+		border: 1px solid #c4c4c4
+	&__text
+		display: inline-block
+		height: 100%
+		vertical-align: middle
+		line-height: 20px
+		padding: 0 0 0 32px
+		color: #fff
+	&--yellow
+		.rt-checkbox__input:checked ~ .rt-checkbox__thumb::after
+			border-color: #f0c630
+	&--white
+		.rt-checkbox__input:checked ~ .rt-checkbox__thumb::after
+			border-color: #fff
+
+.rt-button
+	display: inline-block
+	padding: 14px 36px
+	border-radius: 4px
+	background: #fff
+	font-size: 20px
+	line-height: 28px
+	color: #5f62ac
+	border: none
+	cursor: pointer
+	transition: all .2s ease
+	text-align: center
+	border: 2px solid #fff
+	&:disabled
+		opacity: .5
+		cursor: default
+	&:hover:not(:disabled)
+		border: 2px solid #f0c630
+		color: #f0c630
+
+			
